@@ -3,7 +3,7 @@ Cross-sectional G10 carry backtest.
 
 Each rebalance (monthly):
   1. Rank currencies by short rate.
-  2. Long the top `n_leg`, short the bottom `n_leg`, equal-weight, dollar-neutral.
+  2. Long the top n legs, short the bottom n legs, equal-weight, dollar-neutral.
   3. Realised return over the next period per currency =
         carry (rate differential earned over the period)
       + spot return of that FX vs USD.
@@ -11,10 +11,6 @@ Each rebalance (monthly):
      the USD leg nets out and we're left with the cross-sectional
      high-yielder-minus-low-yielder return, carry + relative spot.
 
-Usage:
-    python backtest.py
-Reads ../data/short_rates.csv and ../data/spot_usd.csv (monthly, %-p.a. rates,
-spot as USD per 1 unit of FX). Writes ../output/results.csv and prints stats.
 """
 
 import numpy as np
